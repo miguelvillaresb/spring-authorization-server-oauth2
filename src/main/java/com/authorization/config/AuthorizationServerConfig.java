@@ -1,4 +1,4 @@
-package com.luckia.authorization.config;
+package com.authorization.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -14,7 +14,7 @@ This an example OAuth2 / OpenID Identity Provider based on Spring Security and S
 3. The server will start in Spring Security debug mode so we will be able to track the flow of requests. Edit `application.yml` file to disable debug mode on Spring Security.
 
 ## Testing OAuth2 flow
-1. Import postman collection file inside `postman` folder.
+1. Import postman collection file included inside `postman` folder.
 2. Open the request included in the collection. There is only one request.
 3. Click on the `Get New Access Token` button inside `Authorization` tab.
 4. Authenticate by form login and authorize on the consent screen for the client application. Use credentials admin / admin

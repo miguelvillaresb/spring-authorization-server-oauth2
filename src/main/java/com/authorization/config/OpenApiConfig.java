@@ -1,4 +1,4 @@
-package com.luckia.authorization.config;
+package com.authorization.config;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
