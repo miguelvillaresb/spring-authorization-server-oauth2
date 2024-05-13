@@ -12,6 +12,7 @@ This an example OAuth2 / OpenID Identity Provider based on Spring Security and S
 1. Clone this repository.
 2. Run `mvn spring-boot:run`
 3. The server will start in Spring Security debug mode so we will be able to track the flow of requests. Edit `application.yml` file to disable debug mode on Spring Security.
+4. OpenAPI swagger will be available in http://localhost:9000/swagger-ui/
 
 ## Testing OAuth2 flow
 1. Import postman collection file included inside `postman` folder.
