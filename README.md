@@ -1,6 +1,6 @@
-# OAuth and OpenID service using Spring Authorization Server
+# OAuth2.1 and OpenID service using Spring Authorization Server
 
-This is an example OAuth2 / OpenID Identity Provider based on Spring Security and Spring Authorization Server.
+This is an example OAuth2.1 / OpenID Identity Provider based on Spring Security and Spring Authorization Server.
 
 ## Repository content
 

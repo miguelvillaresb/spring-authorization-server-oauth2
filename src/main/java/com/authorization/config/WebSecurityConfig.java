@@ -17,6 +17,7 @@ public class WebSecurityConfig {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        // Here you can delegate authentication on a third party, database or external auth service
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         auth
             .inMemoryAuthentication()
