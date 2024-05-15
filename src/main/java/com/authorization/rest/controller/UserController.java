@@ -13,7 +13,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/auth")
-@Tag(name = "Authentication", description = "Endpoints for custom authentication")
+@Tag(name = "Custom authentication", description = "Endpoints for custom authentication")
 public class UserController {
 
     public UserController() {}
