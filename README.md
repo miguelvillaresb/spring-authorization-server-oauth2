@@ -6,7 +6,7 @@ This is an example OAuth2 / OpenID Identity Provider based on Spring Security an
 
 1. Spring Boot backend:
      - OAuth2 and OpenID implementation using Spring Authorization Server.
-     - OpenAPI schema and skeleton controller for custom credentials based authentication, token creation and validation.
+     - OpenAPI schema and skeleton controller for custom based authentication, token creation and validation.
 3. Postman collection ready to use in order to validate OAuth2 authentication flow.
 
 ## Steps to deploy
