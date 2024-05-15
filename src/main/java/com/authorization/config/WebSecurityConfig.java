@@ -31,7 +31,7 @@ public class WebSecurityConfig {
         http
             .authorizeHttpRequests(authorize ->
                 authorize
-                    .requestMatchers("/", "/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**", "/login/oauth2/**").permitAll() // URLs de la lista blanca
+                    .requestMatchers("/custom-auth/**", "/", "/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
                     .anyRequest().authenticated()
             )
             .formLogin(Customizer.withDefaults());
