@@ -5,9 +5,9 @@ This is an example OAuth2 / OpenID Identity Provider based on Spring Security an
 ## Repository content
 
 1. Spring Boot backend:
-     - OAuth2 and OpenID implementation using Spring Authorization Server.
+     - OAuth2.1 and OpenID implementation using Spring Authorization Server.
      - OpenAPI schema and skeleton controller for custom based authentication, token creation and validation.
-3. Postman collection ready to use in order to validate OAuth2 authentication flow.
+3. Postman collection ready to use in order to validate OAuth2.1 authentication flow.
 
 ## Steps to deploy
 1. Clone this repository.
@@ -15,7 +15,7 @@ This is an example OAuth2 / OpenID Identity Provider based on Spring Security an
 3. The server will start in Spring Security debug mode so we will be able to track the flow of requests. Edit `application.yml` file to disable debug mode on Spring Security.
 4. OpenAPI swagger will be available in http://localhost:9000/swagger-ui/index.html
 
-## Testing OAuth2 flow
+## Testing OAuth2.1 flow
 1. Import postman collection file included inside `postman` folder.
 2. Open the request included in the collection. There is only one request.
 3. Click on the `Get New Access Token` button inside `Authorization` tab.
