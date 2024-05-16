@@ -17,7 +17,7 @@ This is an example OAuth2.1 / OpenID Identity Provider based on Spring Security 
 
 ## Testing OAuth2.1 flow
 1. Import postman collection file included inside `postman` folder.
-2. Open the request included in the collection. There is only one request.
+2. Open the `OAuth2 Flow test` request included in the collection.
 3. Click on the `Get New Access Token` button inside `Authorization` tab.
 <p align="center" width="100%">
   <img width="461" alt="image" src="https://github.com/miguelvillaresb/spring-authorization-server-oauth2/assets/91469337/ce12907f-578b-425f-8f2a-15214a89275d">

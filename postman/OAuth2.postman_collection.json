@@ -1,13 +1,13 @@
 {
 	"info": {
-		"_postman_id": "6ad80be5-77e5-445f-a9e1-2dc905d87560",
+		"_postman_id": "3edf4668-044a-4467-8fee-30e1b7a6cf64",
 		"name": "OAuth2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "29713811"
 	},
 	"item": [
 		{
-			"name": "OAuth2 test",
+			"name": "OAuth2 Flow test",
 			"request": {
 				"auth": {
 					"type": "oauth2",
@@ -75,6 +75,51 @@
 					"port": "9000",
 					"path": [
 						"userinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuth2 Introspect",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "oidc-client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiIwYTQ3ODQ4OS1hZTc3LTQ3ZjktOGU5Mi1kNTZmNTQ0YjEzYzYiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZCI6Im9pZGMtY2xpZW50IiwibmJmIjoxNzE1ODg2NDI2LCJzY29wZSI6WyJwcm9maWxlIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMCIsImV4cCI6MTcxNTg4NjcyNiwiaWF0IjoxNzE1ODg2NDI2LCJqdGkiOiJlZDJlMGFkNy00NTJlLTRmYjAtYTAzMS05YWU2ZTdjNjczN2QifQ.wnuC8iRo4kHx2khnMlSHXNv7tCpoJXNxqtyi-JuXX5-ivz54_VB6DRPbdEvaowV-5XcTKJnGpTYNAT8ak12S7bk2-av7u5JSF_IgA0IMv3CCmbmEMNrVTKGpjVN5z30AmWXNA67n4LwC7uujHfb9OivP7FmHN_bRBIzjGBarLy0EIe-_098K0uwcG9F0yp1w8p8mofP9-IJK-kX_ekvW9ZW9KHMjC4HeFa5q-bg-8JkRBA2Mh0NDalyKHVCPZ_IhtM6oHm5TWobDdO9a3rbNAjlU7u9f2Vqg34w-RkMGtAbcPrt8523NHmzUa76FejV4gJ5u96lVrqebwxxMA7FDvw",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/oauth2/introspect",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"oauth2",
+						"introspect"
 					]
 				}
 			},
