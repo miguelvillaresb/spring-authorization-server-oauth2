@@ -32,10 +32,11 @@ public class WebSecurityConfig {
         http
             .authorizeHttpRequests(authorize ->
                 authorize
-                    .requestMatchers("/custom-auth/**", "/", "/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
+                    .requestMatchers("/api/**", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
                     .anyRequest().authenticated()
             )
-            .formLogin(Customizer.withDefaults());
+            .formLogin(Customizer.withDefaults())
+            .csrf(csrf -> csrf.disable());
         
         return http.build();
     }

@@ -10,7 +10,7 @@ import com.authorization.rest.model.TokenDto;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("/custom")
+@RequestMapping("/api")
 @Tag(name = "Custom services", description = "Custom endpoints")
 public class UserController {
 
@@ -18,7 +18,7 @@ public class UserController {
 
     @PostMapping("/validate")
     public TokenDto validate(@RequestBody final TokenDto jwtToken) {
-        // TO-DO: Decode the jwtToken claims to get the user and then return the nyx token
+        // TO-DO: Decode the jwtToken claims to get the user and then return the NYX token from (user, NYX token)
         TokenDto nyxToken = new TokenDto();
         nyxToken.setToken("nyxtoken");
         return nyxToken;
