@@ -5,27 +5,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.authorization.rest.model.CredentialsDto;
 import com.authorization.rest.model.TokenDto;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("/custom-auth")
-@Tag(name = "Custom authentication", description = "Endpoints for custom authentication")
+@RequestMapping("/custom")
+@Tag(name = "Custom services", description = "Custom endpoints")
 public class UserController {
 
     public UserController() {}
 
-    @PostMapping("/login")
-    public TokenDto login(@RequestBody final CredentialsDto credentialsDto) {
-        TokenDto tokenDto = new TokenDto();
-        tokenDto.setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
-        return tokenDto;
-    }
-
     @PostMapping("/validate")
-    public boolean validate(@RequestBody final TokenDto tokenDto) {
-        return true;
+    public TokenDto validate(@RequestBody final TokenDto jwtToken) {
+        // TO-DO: Decode the jwtToken claims to get the user and then return the nyx token
+        TokenDto nyxToken = new TokenDto();
+        nyxToken.setToken("nyxtoken");
+        return nyxToken;
     }
 }

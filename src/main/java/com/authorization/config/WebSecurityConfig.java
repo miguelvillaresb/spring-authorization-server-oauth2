@@ -17,13 +17,14 @@ public class WebSecurityConfig {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        // Here you can delegate authentication on a third party, database or external auth service
+        // TO-DO: Here you can delegate authentication on a third party, database or external auth service
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         auth
             .inMemoryAuthentication()
                 .withUser("admin")
                 .password(encoder.encode("admin"))
                 .roles("USER");
+        // TO-DO: After login you have a (user, NYX token) pair you have to store on memory
     }
 
     @Bean
