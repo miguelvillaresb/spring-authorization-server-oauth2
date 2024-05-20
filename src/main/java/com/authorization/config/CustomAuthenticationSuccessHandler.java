@@ -30,12 +30,15 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         filteredClaimsMap.put("jti", claimsMap.get("jti"));
         filteredClaimsMap.put("token_type", claimsMap.get("token_type"));
 
-        // TO-DO: Here you have to include the NYX token as a new claim
-        filteredClaimsMap.put("nyx_token", "nyxtoken");
+        if (claims.isActive()) {
+            // TO-DO: Here you have to include the NYX token as a new claim
+            System.out.println("Getting NYX token for username " + claims.getUsername());
+            String nyxToken = "harcodednyxtoken";
+            filteredClaimsMap.put("nyx_token", nyxToken);
+        }
 
         response.setContentType("application/json");
         PrintWriter writer = response.getWriter();
-
         Gson gson = new Gson();
         String jsonClaims = gson.toJson(filteredClaimsMap);
         writer.write(jsonClaims);
