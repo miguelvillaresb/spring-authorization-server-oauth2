@@ -5,7 +5,9 @@ This is an example OAuth2.1 / OpenID Identity Provider based on Spring Security 
 ## Repository content
 
 1. Spring Boot backend:
-     - OAuth2.1 and OpenID implementation using Spring Authorization Server. This implementation includes support to delegate authentication to a third party system.
+     - OAuth2.1 and OpenID implementation using Spring Authorization Server. This implementation includes
+        - Support to delegate authentication to a third party system.
+        - Instrospect endpoint customization to include new claims.
      - OpenAPI schema and skeleton controller for custom token validation.
 3. Postman collection ready to use with 2 requests:
      - Request `OAuth2 Flow test` to validate OAuth2.1 authentication flow.
