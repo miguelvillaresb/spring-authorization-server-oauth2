@@ -32,7 +32,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
         if (claims.isActive()) {
             // TO-DO: Here you have to include the NYX token as a new claim
-            System.out.println("Getting NYX token for username " + claims.getUsername());
+            System.out.println("Getting NYX token for username " + claims.getSubject());
             String nyxToken = "harcodednyxtoken";
             filteredClaimsMap.put("nyx_token", nyxToken);
         }
