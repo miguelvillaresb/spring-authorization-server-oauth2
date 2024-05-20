@@ -38,5 +38,10 @@ This is an example OAuth2.1 / OpenID Identity Provider based on Spring Security 
 <img width="325" alt="image" src="https://github.com/miguelvillaresb/spring-authorization-server-oauth2/assets/91469337/e81324ea-8d84-43a6-8011-0e10601b32f7">
 </p>
 
-References
+## References
 - [Spring Authorization Server](https://spring.io/projects/spring-authorization-server)
+- [Spring Authorization Server endpoints customization](https://docs.spring.io/spring-authorization-server/reference/protocol-endpoints.html)
+
+## Next steps
+- Change `WebSecurityConfig` to delegate login into NYX and get the NYX token.
+- Change `CustomAuthenticationSuccessHandler` to get NYX token by username and include as a new claim.
