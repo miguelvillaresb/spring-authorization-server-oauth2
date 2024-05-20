@@ -12,9 +12,12 @@ import org.springframework.security.oauth2.server.authorization.config.annotatio
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.util.matcher.MediaTypeRequestMatcher;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
 public class AuthorizationServerConfig {
+
+    private final AuthenticationSuccessHandler introspectionResponseHandler = new CustomAuthenticationSuccessHandler();
 
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -22,6 +25,9 @@ public class AuthorizationServerConfig {
         OAuth2AuthorizationServerConfiguration.applyDefaultSecurity(http);
         http
                 .getConfigurer(OAuth2AuthorizationServerConfigurer.class)
+                .tokenIntrospectionEndpoint(tokenIntrospectionEndpoint ->
+                        tokenIntrospectionEndpoint
+                        .introspectionResponseHandler(introspectionResponseHandler))
                 .oidc(Customizer.withDefaults()); // Enable OpenID Connect 1.0
         http
                 .exceptionHandling((exceptions) -> exceptions
