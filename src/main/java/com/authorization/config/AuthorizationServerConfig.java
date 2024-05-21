@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @Configuration
 public class AuthorizationServerConfig {
 
-    private final AuthenticationSuccessHandler introspectionResponseHandler = new CustomAuthenticationSuccessHandler();
+    private final AuthenticationSuccessHandler introspectionResponseHandler = new CustomIntrospectionResponseHandler();
 
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)

@@ -8,16 +8,16 @@ This is an example OAuth2.1 / OpenID Identity Provider based on Spring Security 
      - OAuth2.1 and OpenID implementation using Spring Authorization Server. This implementation includes
         - Support to delegate authentication to a third party system.
         - Introspect endpoint customization to include new claims.
-     - OpenAPI schema and skeleton controller for custom token validation.
+     - OpenAPI schema and skeleton controller with custom token validation endpoint.
 3. Postman collection ready to use with 2 requests:
      - Request `OAuth2 Flow test` to validate OAuth2.1 authentication flow.
-     - Request to validate OAuth2.1 `introspect` endpoint customization.
+     - Request to validate `introspect` endpoint customization.
 
 ## Steps to deploy
 1. Clone this repository.
 2. Run `mvn spring-boot:run`
 3. The server will start in Spring Security debug mode so we will be able to track the flow of requests. Edit `application.yml` file to disable debug mode on Spring Security.
-4. OpenAPI swagger will be available in http://localhost:9000/swagger-ui/index.html
+4. OpenAPI SwaggerUI available in http://localhost:9000/swagger-ui/index.html
 
 ## Testing OAuth2.1 flow
 1. Import postman collection file included inside `postman` folder.
@@ -45,5 +45,5 @@ This is an example OAuth2.1 / OpenID Identity Provider based on Spring Security 
 - [Spring Authorization Server endpoints customization](https://docs.spring.io/spring-authorization-server/reference/protocol-endpoints.html)
 
 ## Next steps
-- Change `WebSecurityConfig` to delegate login into NYX and get the NYX token.
-- Change `CustomAuthenticationSuccessHandler` to get NYX token by username and include as a new claim.
+- Change `WebSecurityConfig` to delegate login into NYX, get the NYX token and store the (username, NYX token) pair.
+- Change `CustomIntrospectionResponseHandler` to get NYX token by username and include the NYX token token as a new claim.

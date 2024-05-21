@@ -14,9 +14,9 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
+public class CustomIntrospectionResponseHandler implements AuthenticationSuccessHandler {
 
-    public CustomAuthenticationSuccessHandler() {}
+    public CustomIntrospectionResponseHandler() {}
 
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
         OAuth2TokenIntrospectionAuthenticationToken token = (OAuth2TokenIntrospectionAuthenticationToken) authentication;
